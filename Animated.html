@@ -1,0 +1,388 @@
+<html>
+	<head>
+		<title>animated Rain</title>
+	<style>
+		body{
+				padding: 0;
+				margin: 0;
+				background: url(free-haunted-house-wallpaper-016.jpg);
+                background-size:cover;
+                /*background-repeat: no-repeat;*/
+                background-attachment: fixed;
+			}
+body:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+ display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba();
+  z-index: 1;
+  -webkit-animation: thunder-bg 6s infinite;
+          animation: thunder-bg 6s infinite;
+}
+
+	.rain{
+			height: 100%;
+			background: url(rain_PNG13468.png);
+			animation: rain .3s linear infinite;
+		}
+
+	.rain: before{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: white;
+			animation: light .4s linear infinte;
+			opacity: 0;
+			}
+	@keyframes rain
+		{
+			0%
+			{
+				background-position: 0% 0%;
+			}
+			100%
+			{
+				background-position: 20% 100%;
+			}		
+		}
+		
+	@-webkit-keyframes thunder-bg {
+  0% {
+    background-color: rgba(34, 34, 34, 0.6);
+  }
+  9% {
+    background-color: rgba(34, 34, 34, 0.6);
+  }
+  10% {
+    background-color: rgba(59, 59, 59, 0.0);
+  }
+  10.5% {
+    background-color: rgba(34, 34, 34, 0.6);
+  }
+  80% {
+    background-color: rgba(34, 34, 34, 0.6);
+  }
+  82% {
+    background-color: rgba(59, 59, 59, 0.0);
+  }
+  83% {
+    background-color: rgba(34, 34, 34, 0.6);
+  }
+  83.5% {
+    background-color: rgba(59, 59, 59, 0.0);
+  }
+  100% {
+    background-color: rgba(34, 34, 34, 0.6);		
+  }
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#canvas3 {
+  z-index: 5;
+}
+
+.fogwrapper {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  -webkit-filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+  filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+}
+#foglayer_01, #foglayer_02, #foglayer_03 {
+  height: 100%;
+  position: absolute;
+  width: 200%;
+}
+#foglayer_01 .image01, #foglayer_01 .image02,
+#foglayer_02 .image01, #foglayer_02 .image02,
+#foglayer_03 .image01, #foglayer_03 .image02 {
+  float: left;
+  height: 100%;
+  width: 520%;
+}
+#foglayer_01 {
+  -webkit-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+  -moz-animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+  animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 15s linear infinite;
+}
+#foglayer_02, #foglayer_03 {
+  -webkit-animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+  -moz-animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+  animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 13s linear infinite;
+}
+
+/* ---------- Moving Fog ---------- */
+/*
+  'size: cover' || 'size: 100%'; results remain the same
+  'attachment: scroll' can be added or removed; results remain the same
+  'attachment: fixed' causing unexpected results in Chrome
+  'repeat-x' || 'no-repeat'; results remain the same
+*/ 
+#foglayer_01 .image01, #foglayer_01 .image02 {
+  background: url("fog1.png") center center/cover no-repeat transparent;
+}
+#foglayer_02 .image01, #foglayer_02 .image02,
+#foglayer_03 .image01, #foglayer_03 .image02{
+  background: url("fog2.png") center center/cover no-repeat transparent;
+}
+
+/* ---------- Keyframe Layer 1 ---------- */
+@-webkit-keyframes foglayer_01_opacity {
+  0% { opacity: .1; }
+  22% { opacity: .5; }
+  40% { opacity: .28; }
+  58% { opacity: .4; }
+  80% { opacity: .16; }
+  100% { opacity: .1; }
+}
+@-moz-keyframes foglayer_01_opacity {
+  0% { opacity: .1; }
+  22% { opacity: .5; }
+  40% { opacity: .28; }
+  58% { opacity: .4; }
+  80% { opacity: .16; }
+  100% { opacity: .1; }
+}
+@-o-keyframes foglayer_01_opacity {
+  0% { opacity: .1; }
+  22% { opacity: .5; }
+  40% { opacity: .28; }
+  58% { opacity: .4; }
+  80% { opacity: .16; }
+  100% { opacity: .1; }
+}
+@keyframes foglayer_01_opacity {
+  0% { opacity: .1; }
+  22% { opacity: .5; }
+  40% { opacity: .28; }
+  58% { opacity: .4; }
+  80% { opacity: .16; }
+  100% { opacity: .1; }
+}
+/* ---------- Keyframe Layer 2 ---------- */
+@-webkit-keyframes foglayer_02_opacity {
+  0% { opacity: .5; }
+  25% { opacity: .2; }
+  50% { opacity: .1; }
+  80% { opacity: .3; }
+  100% { opacity: .5; }
+}
+@-moz-keyframes foglayer_02_opacity {
+  0% { opacity: .5; }
+  25% { opacity: .2; }
+  50% { opacity: .1; }
+  80% { opacity: .3; }
+  100% { opacity: .5; }
+}
+@-o-keyframes foglayer_02_opacity {
+  0% { opacity: .5; }
+  25% { opacity: .2; }
+  50% { opacity: .1; }
+  80% { opacity: .3; }
+  100% { opacity: .5; }
+}
+@keyframes foglayer_02_opacity {
+  0% { opacity: .5; }
+  25% { opacity: .2; }
+  50% { opacity: .1; }
+  80% { opacity: .3; }
+  100% { opacity: .5; }
+}
+/* ---------- Keyframe Layer 3 ---------- */
+@-webkit-keyframes foglayer_03_opacity {
+  0% { opacity: .8 }
+  27% { opacity: .2; }
+  52% { opacity: .6; }
+  68% { opacity: .3; }
+  100% { opacity: .8; }
+}
+@-moz-keyframes foglayer_03_opacity {
+  0% { opacity: .8 }
+  27% { opacity: .2; }
+  52% { opacity: .6; }
+  68% { opacity: .3; }
+  100% { opacity: .8; }
+}
+@-o-keyframes foglayer_03_opacity {
+  0% { opacity: .8 }
+  27% { opacity: .2; }
+  52% { opacity: .6; }
+  68% { opacity: .3; }
+  100% { opacity: .8; }
+}
+@keyframes foglayer_03_opacity {
+  0% { opacity: .8; }
+  27% { opacity: .2; }
+  52% { opacity: .6; }
+  68% { opacity: .3; }
+  100% { opacity: .8; }
+}
+/* ---------- Keyframe moveMe ---------- */
+@-webkit-keyframes foglayer_moveme {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@-moz-keyframes foglayer_moveme {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@-o-keyframes foglayer_moveme {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@keyframes foglayer_moveme {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+@media only screen
+  and (min-width: 280px)
+  and (max-width: 767px) {
+    #foglayer_01 .image01, #foglayer_01 .image02,
+    #foglayer_02 .image01, #foglayer_02 .image02,
+    #foglayer_03 .image01, #foglayer_03 .image02 {
+      width: 100%;
+    }
+  }
+
+	</style>
+	</head>
+		<body class="thunder">
+<canvas id="canvas3"></canvas>
+
+			<div class="rain">
+<div id="foglayer_01" class="fog">
+  <div class="image01"></div>
+  <div class="image02"></div>
+</div>
+<div id="foglayer_02" class="fog">
+  <div class="image01"></div>
+  <div class="image02"></div>
+</div>
+<div id="foglayer_03" class="fog">
+  <div class="image01"></div>
+  <div class="image02"></div>
+</div>
+
+</div>
+		<script language= "Javascript" type="text/javascript">
+myAudio = new Audio('Loud-thunder-sound.mp3');
+myAudio.loop = true;
+myAudio.play();
+
+myAudio = new Audio('thunder_sound_FX-Grant_Evans-1523270250.mp3');
+myAudio.loop = true;
+myAudio.play();
+
+var canvas3 = document.getElementById('canvas3');
+var ctx3 = canvas3.getContext('2d');
+
+var lightning = [];
+var lightTimeCurrent = 0;
+var lightTimeTotal = 0;
+
+var w = canvas3.width = window.innerWidth;
+var h = canvas3.Height = window.innerHeight;
+window.addEventListener('resize', function() {
+w = canvas3.Width = window.innerWidth; 
+h = canvas3.Height = window.innerHeight;
+});
+
+function random(min, max) {
+  return Math.random() * (max - min + 1) + min;
+}
+function clearCanvas3() {
+  ctx3.globalCompositeOperation = 'destination-out';
+  ctx3.fillStyle = 'rgba(0,0,0,' + random(1, 30) / 100 + ')';
+  ctx3.fillRect(0, 0, w, h);
+  ctx3.globalCompositeOperation = 'source-over';
+};
+function createLightning() {
+  var x = random(100, w - 100);
+  var y = random(0, h / 4);
+
+  var createCount = random(1, 3);
+  for (var i = 0; i < createCount; i++) {
+    single = {
+      x: x,
+      y: y,
+      xRange: random(5, 25),
+      yRange: random(10, 30),
+      path: [{
+        x: x,
+        y: y
+      }],
+      pathLimit: random(20, 55),
+    };
+    lightning.push(single);
+  }
+};
+function drawLightning() {
+  for (var i = 0; i < lightning.length; i++) {
+    var light = lightning[i];
+
+    light.path.push({
+      x: light.path[light.path.length - 1].x + (random(0, light.xRange) - (light.xRange / 2)),
+      y: light.path[light.path.length - 1].y + (random(0, light.yRange))
+    });
+
+    if (light.path.length > light.pathLimit) {
+      lightning.splice(i, 1);
+    }
+
+    ctx3.strokeStyle = 'rgba(255, 255, 255, .1)';
+    ctx3.lineWidth = 3;
+    if (random(0, 20) === 0) {
+      ctx3.lineWidth = 6;
+    }
+    if (random(0, 30) === 0) {
+      ctx3.lineWidth = 8;
+    }
+
+    ctx3.beginPath();
+    ctx3.moveTo(light.x, light.y);
+    for (var pc = 0; pc <light.path.length; pc++) {
+      ctx3.lineTo(light.path[pc].x, light.path[pc].y);
+    }
+    if (Math.floor(random(0, 30)) === 1) { //to fos apo piso
+      ctx3.fillStyle = 'rgba(255, 255, 255, ' + random(1, 3) / 100 + ')';
+      ctx3.fillRect(0, 0, w, h);
+    }
+    ctx3.lineJoin = 'miter';
+    ctx3.stroke();
+  }
+};
+function animateLightning() {
+  clearCanvas3();
+  lightTimeCurrent++;
+  if (lightTimeCurrent >= lightTimeTotal) {
+    createLightning();
+    lightTimeCurrent = 0;
+    lightTimeTotal = 200;  //rand(100, 200)
+  }
+  drawLightning();
+}
+function animloop() {
+  animateLightning();
+  requestAnimationFrame(animloop);
+}
+animloop();
+		
+		</script>
+		</body>
+</html>
